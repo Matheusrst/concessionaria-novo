@@ -1,0 +1,41 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Marca {
+  id     Int      @id @default(autoincrement())
+  nome   String
+  logoUrl String?
+  Modelos Modelo[]
+}
+
+model Modelo {
+  id       Int      @id @default(autoincrement())
+  nome     String
+  marca    Marca    @relation(fields: [marcaId], references: [id])
+  marcaId  Int
+  Veiculos Veiculo[]
+}
+
+model Veiculo {
+  id            Int             @id @default(autoincrement())
+  modelo        Modelo          @relation(fields: [modeloId], references: [id])
+  modeloId      Int
+  ano           Int
+  preco         Float
+  especificacao String?
+  Imagens       ImagemVeiculo[]
+}
+
+model ImagemVeiculo {
+  id        Int     @id @default(autoincrement())
+  veiculo   Veiculo @relation(fields: [veiculoId], references: [id])
+  veiculoId Int
+  url       String
+  descricao String?
+}

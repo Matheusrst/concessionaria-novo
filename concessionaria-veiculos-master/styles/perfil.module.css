@@ -1,0 +1,78 @@
+/* Perfil */
+.profile-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.profile-header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.profile-info {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.profile-image img {
+  border-radius: 50%;
+  border: 2px solid #FFD700;
+}
+
+.profile-details h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.profile-details p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.profile-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.profile-actions button {
+  background-color: #FFD700;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.profile-actions button:hover {
+  background-color: #e6b800;
+}
+
+.upload-label {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.upload-label:hover {
+  background-color: #0056b3;
+}
+
+.upload-input {
+  display: none; /* Oculta o campo de upload */
+}

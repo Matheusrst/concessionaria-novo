@@ -1,0 +1,337 @@
+/* Global */
+body {
+  background-color: #C4C4C4;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column; /* Empilha os elementos verticalmente */
+  justify-content: flex-start; /* Alinha o conteúdo ao topo */
+  align-items: center; /* Alinha os itens ao centro */
+  min-height: 100vh; /* Ocupa toda a altura da tela */
+  overflow-x: hidden; /* Impede rolagem horizontal */
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFD700;
+  padding: 1rem 8rem; /* Aumenta o espaçamento lateral da navbar */
+  width: 100%; /* Garantir que ocupe toda a largura da tela */
+  position: fixed; /* Fixa a navbar no topo */
+  top: 0; /* Coloca a navbar no topo */
+  left: 0; /* Alinha ao lado esquerdo */
+  z-index: 1000; /* Garante que a navbar fique acima de outros elementos */
+}
+
+/* Navbar links */
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 3rem; /* Aumenta o espaçamento lateral entre os itens */
+}
+
+/* Remover a sublinha e aplicar fonte mais sofisticada */
+.navbar a {
+  text-decoration: none; /* Remove a sublinha */
+  font-size: 1.1rem; /* Tamanho da fonte */
+  font-weight: 600; /* Peso da fonte */
+  color: #333; /* Cor padrão do texto */
+  transition: all 0.3s ease; /* Transição suave para hover e foco */
+  padding: 5px 0; /* Espaçamento superior e inferior */
+}
+
+/* Link ativo */
+.active-link {
+  color: red; /* Cor vermelha para o link ativo */
+  border-bottom: 2px solid red; /* Linha vermelha embaixo do link */
+}
+
+/* Hover: mudança de cor e sublinha com transição suave */
+.navbar a:hover {
+  color: #FF6347; /* Cor ao passar o mouse */
+  border-bottom: 2px solid #FF6347; /* Adiciona sublinha com cor ao passar o mouse */
+}
+
+/* Focus: efeito ao focar no link */
+.navbar a:focus {
+  outline: none; /* Remove a borda padrão de foco */
+  color: #FF6347; /* Foco com cor diferente */
+  border-bottom: 2px solid #FF6347; /* Linha vermelha ao focar no link */
+}
+
+/* Perfil Icon */
+.profile-icon img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%; /* Deixa o ícone arredondado */
+  transition: transform 0.3s ease; /* Suaviza a transição ao passar o mouse */
+}
+
+.profile-icon img:hover {
+  transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin: 7rem 0 1.5rem 0; /* Dá um espaço de 7rem em cima para não sobrepor a navbar */
+  margin-left: 16rem;
+  width: 100%;
+  max-width: 800px; /* Aumenta a largura máxima da barra de pesquisa */
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
+
+.search-bar button {
+  background-color: #FFD700; /* Cor de fundo igual à da navbar */
+  border: none;
+  margin-left: -40px;
+  cursor: pointer;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px; /* Bordas arredondadas */
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Brand List */
+.brand-list {
+  display: flex;
+  gap: 1.5rem; /* Espaçamento entre os itens */
+  padding: 1rem;
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  flex-wrap: wrap; /* Permite quebra de linha se necessário */
+}
+
+.brand-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100px; /* Ajuste para o tamanho dos itens */
+  height: 100px;
+}
+
+.brand-image {
+  border-radius: 50%;
+  width: 80px;  /* Tamanho da imagem */
+  height: 80px; /* Tamanho da imagem */
+}
+
+/* Category Carousel */
+.category-carousel {
+  display: flex;
+  gap: 2rem; /* Espaçamento entre os itens */
+  overflow-x: auto;
+  padding: 1rem;
+  justify-content: center; /* Centraliza os itens horizontalmente */
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 200px; /* Ajustando a largura de cada item */
+}
+
+.category-image {
+  width: 150px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.category-name {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Top Selling Cars */
+.top-selling-cars {
+  display: flex;
+  gap: 2rem; /* Espaçamento entre os itens */
+  overflow-x: auto;
+  padding: 1rem;
+  justify-content: center; /* Centraliza os itens horizontalmente */
+}
+
+.car-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 200px; /* Ajustando a largura de cada item */
+}
+
+.car-image {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.car-name {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Recommended Cars */
+.recommended-cars {
+  display: flex;
+  gap: 2rem; /* Aumenta o espaçamento lateral entre os carros recomendados */
+  overflow-x: auto;
+  padding: 1.5rem;
+  justify-content: center;
+}
+
+/* Estilo do card */
+.recommended-car-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 20px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra do card */
+  width: 200px; /* Largura do card */
+  text-align: center;
+}
+
+/* Imagem do carro */
+.recommended-car-item img {
+  width: 210px; /* Manter a largura da imagem */
+  height: 110px; /* Manter a altura da imagem */
+  border-radius: 10px; /* Bordas arredondadas na imagem */
+  object-fit: cover; /* Ajuste de imagem */
+}
+
+/* Botão "Ver Mais" */
+.recommended-car-item button {
+  background-color: #FFD700; /* Cor de fundo igual à da navbar */
+  border: none;
+  border-radius: 30px; /* Bordas arredondadas */
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.recommended-car-item button:hover {
+  background-color: #e6b800; /* Cor ao passar o mouse */
+}
+
+/* Contêiner principal */
+.brand-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /* Aumenta o espaçamento entre as marcas */
+  padding: 20px;
+  overflow-x: auto;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Cada item da lista */
+.brand-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Classe para as imagens */
+.brand-item img {
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+}
+
+/* Adicione esse código no seu CSS */
+.add-car-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.add-car-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.add-car-button:hover {
+  background-color: #0056b3;
+}
+
+/* CSS para o formulário de adicionar carros */
+.add-car-form {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-car-form h2 {
+  margin-bottom: 20px;
+}
+
+.add-car-form input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.add-car-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-car-form button:hover {
+  background-color: #0056b3;
+}
+
+.delete-button {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #cc0000;
+}
